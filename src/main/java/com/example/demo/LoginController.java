@@ -21,11 +21,10 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String GotoWelcomePage(@RequestParam String name, @RequestParam String password, ModelMap model) {
-		if (authenticationService.Authenticate(name, password)) {
-			model.put("name", name);
-
-			return "welcome";
+	public String GotoWelcomePage(@RequestParam String username, @RequestParam String password, ModelMap model) {
+		if (authenticationService.Authenticate(username, password)) {
+			model.put("name", username);
+            return "welcome";
 		}
 		model.put("ErrorMessage", "Invalid Credentials please try again");
 		return "login";

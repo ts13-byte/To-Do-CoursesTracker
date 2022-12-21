@@ -10,7 +10,5 @@ public class AuthenticationService {
 		boolean isValidPassword=password.equalsIgnoreCase("good");
 		
 		return (isValidUserName && isValidPassword); 
-		
-		
 	}
 }

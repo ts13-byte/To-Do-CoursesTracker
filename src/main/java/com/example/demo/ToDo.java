@@ -1,10 +1,13 @@
 package com.example.demo;
 
 import java.time.LocalDate;
+
+import javax.validation.constraints.Size;
 //static lsit of todos => Database (H2,mysql)
 public class ToDo {
 	private int id;
 	private String userName;
+	@Size(min=10, message="Enter atleast 10 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
