@@ -8,13 +8,15 @@
 <title>List Todos page</title>
 </head>
 <body>
+
+
 	<div class="container">
 		<h1>Welcome to the To-Dos application</h1>
 		<h2>your ToDos are:</h2>
 		<table class="table">
 			<thead>
 				<tr>
-					<th>id</th>
+					
 					<th>description</th>
 					<th>Target Date</th>
 					<th>Is Done?</th>
@@ -24,7 +26,7 @@
 			<tbody>
 				<c:forEach items="${listOfTodos}" var="listOfTodos">
 					<tr>
-						<td>${listOfTodos.id}</td>
+						
 						<td>${listOfTodos.description}</td>
 						<td>${listOfTodos.targetDate}</td>
 						<td>${listOfTodos.done}</td>

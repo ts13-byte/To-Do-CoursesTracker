@@ -2,15 +2,26 @@ package com.example.demo;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
-//static lsit of todos => Database (H2,mysql)
+
+//static list of todos => Database (H2,mysql)
+@Entity(name = "Todo")
 public class ToDo {
+	@Id
+	@GeneratedValue
 	private int id;
 	private String userName;
-	@Size(min=10, message="Enter atleast 10 characters")
+	@Size(min = 10, message = "Enter atleast 10 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
+
+	public ToDo() {
+
+	}
 
 	public ToDo(int id, String userName, String description, LocalDate targetDate, boolean done) {
 		super();
